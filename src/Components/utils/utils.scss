@@ -1,0 +1,19 @@
+.error-message {
+  color: maroon;
+  opacity: 0;
+  transition: opacity 1s ease;
+  will-change: opacity;
+  animation-name: error-fade;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes error-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

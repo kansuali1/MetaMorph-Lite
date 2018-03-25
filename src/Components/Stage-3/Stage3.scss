@@ -1,0 +1,50 @@
+.progress {
+  display: flex;
+  align-items: center;
+  .step {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px 0 20px 0;
+    margin-bottom: 40px;
+    opacity: 1;
+    color: maroon;
+    background: #ccc;
+    flex-basis: 33%;
+
+    span {
+      text-align: center;
+    }
+
+    &.active {
+      background: #ddd;
+      span {
+        opacity: 1;
+        color: green;
+        animation: fadeInOut 2s ease infinite;
+      }
+    }
+    &.complete {
+      background: green;
+      color: #fff;
+    }
+  }
+}
+@keyframes fadeInOut {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .progress {
+    align-items: unset;
+  }
+}

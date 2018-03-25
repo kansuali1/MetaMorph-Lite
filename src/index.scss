@@ -1,0 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  background: #ddd;
+}
+
+body {
+  font-family: sans-serif;
+  font-family: "Biryani", sans-serif;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: inherit;
+  height: auto;
+}

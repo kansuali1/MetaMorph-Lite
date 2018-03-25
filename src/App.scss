@@ -1,0 +1,103 @@
+.App {
+  position: relative;
+  padding: 30px;
+  background: rgba(37, 37, 37, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffd600;
+  box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.5);
+  transition: all 1s ease;
+
+  display: flex;
+  flex-direction: column;
+
+  z-index: 3;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+.pp-by-ss {
+  display: flex;
+  img {
+    max-width: 100px;
+  }
+  a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.75em;
+
+    span {
+      padding-top: 5px;
+    }
+  }
+}
+
+.stage {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  padding: 20px;
+  margin: 15px 0;
+  transition: all 1s ease;
+  background: #fff;
+  color: #252525;
+  a,
+  button {
+    float: right;
+    background: #fff;
+    font-size: 0.95em;
+    color: #252525;
+    padding: 7px 15px;
+    border: 1px solid #252525;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background: #252525;
+      color: #fff;
+      border: 1px solid transparent;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  canvas {
+    display: none;
+  }
+  .App {
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    background: #000;
+
+    > img {
+      padding-top: 25px;
+    }
+    .stage {
+      width: 90%;
+      flex-wrap: wrap;
+
+      & > div {
+        word-break: break-word;
+      }
+
+      &.loading {
+        height: 150px;
+      }
+
+      &.stage3 b {
+        clear: both;
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+#rates {
+  #coins-being-exchanged {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 20px 0;
+
+    img {
+      max-width: 50px;
+      margin: 0 15px;
+    }
+    svg {
+      font-size: 20px;
+    }
+  }
+  div {
+    display: flex;
+    align-items: center;
+    line-height: 1.5em;
+
+    span {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+  }
+}
+
+#createTx {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px 0;
+  .input-control {
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+    flex-basis: 50%;
+    height: 30px;
+    padding: 0;
+    margin: 10px 0 25px 0;
+
+    input {
+      padding: 10px;
+      border: 1px solid #252525;
+
+      &.valid {
+        border: 1px solid green;
+        background: #fff;
+      }
+      &:placeholder {
+        padding-left: 5px;
+      }
+    }
+
+    &:nth-of-type(1) {
+      margin-right: 10px;
+    }
+
+    &:nth-of-type(2) {
+      margin-left: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #createTx {
+    flex-direction: column;
+    height: 142px;
+
+    justify-content: space-around;
+    .input-control {
+      padding: 0;
+      margin: 0 0 15px 0;
+
+      &:nth-of-type(1) {
+        margin-right: 0;
+      }
+
+      &:nth-of-type(2) {
+        margin-left: 0;
+      }
+    }
+  }
+}
