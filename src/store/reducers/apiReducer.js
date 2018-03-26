@@ -63,6 +63,7 @@ export default (state = initState, { type, data }) => {
   if (type === constants.CREATE_TX) {
     updated.txData = data;
     updated.stage = 3;
+    updated.txProgress = 1;
     return updated;
   }
 
@@ -71,8 +72,22 @@ export default (state = initState, { type, data }) => {
       ? (updated.txProgress = 1)
       : data.status === "received"
         ? (updated.txProgress = 2)
-        : (updated.txProgress = 3);
+        : data.status === "complete"
+          ? (updated.txProgress = 3)
+          : (updated.txProgress = 0);
     updated.txProgressData = data;
+    return updated;
+  }
+
+  if (type === constants.GET_ORDER_INFO) {
+    data.status === "no_deposits"
+      ? (updated.txProgress = 1)
+      : data.status === "received"
+        ? (updated.txProgress = 2)
+        : data.status === "complete"
+          ? (updated.txProgress = 3)
+          : (updated.txProgress = 0);
+    updated.txData = data;
     return updated;
   }
 

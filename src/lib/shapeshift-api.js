@@ -53,6 +53,7 @@ var ShapeShift = (function() {
     MarketInfo: { path: "marketinfo", method: "GET" },
     RecentTxList: { path: "recenttx", method: "GET" },
     StatusOfDepositToAddress: { path: "txStat", method: "GET" },
+    OrderInfo: { path: "orderinfo", method: "GET" },
     TimeRemainingFixedAmountTx: { path: "timeremaining", method: "GET" },
     GetCoins: { path: "getcoins", method: "GET" },
     GetTxListWithKey: { path: "txbyapikey", method: "GET" },
@@ -148,6 +149,14 @@ var ShapeShift = (function() {
     });
   };
 
+  SS.OrderInfo = function(address, cb) {
+    if (address === undefined) throw new Error("no address provided");
+    var apiEp = getArgsAdder(endPoints.OrderInfo, [address]);
+    var xmlhttp = CreateXmlHttp();
+    AjaxRequest(xmlhttp, apiEp, function(response) {
+      cbProtector(cb, response);
+    });
+  };
   SS.GetTimeRemainingFxiedAmountTx = function(address, cb) {
     if (address === undefined) throw new Error("no address provided");
     var apiEp = getArgsAdder(endPoints.TimeRemainingFixedAmountTx, [address]);

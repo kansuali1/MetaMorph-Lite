@@ -11,10 +11,17 @@ export default {
       api: apiReducer
     });
 
-    // const composeEnhancers =
-    //   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+    if (process.env.NODE_ENV !== "production") {
+      const composeEnhancers =
+        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-    store = createStore(reducers, applyMiddleware(thunk));
+      store = createStore(
+        reducers,
+        composeEnhancers(applyMiddleware(thunk, logger))
+      );
+    } else {
+      store = createStore(reducers, applyMiddleware(thunk));
+    }
 
     return store;
   },

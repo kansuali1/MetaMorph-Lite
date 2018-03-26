@@ -2,21 +2,26 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import actions from "../../store/actions";
 import "./Stage3.scss";
+import Loader from "../../Components/utils/Loader";
 
 class Progress extends Component {
   state = { interval: null };
 
   componentDidMount() {
-    const { getStatus, txData } = this.props;
-    getStatus(txData.deposit);
-    // Update it every x seconds
-    const interval = setInterval(getStatus(txData.deposit), 5000);
+    const { txData, getStatus } = this.props;
+
+    // Update status every 5 seconds..
+    const interval = setInterval(() => {
+      console.log("interval");
+      getStatus(txData.deposit);
+    }, 5000);
     //To clear when done
-    this.setState({ interval: interval });
+    this.setState({ interval });
   }
 
   componentWillUnmount() {
     clearInterval(this.state.interval);
+    console.log("cleared", this.state.interval);
   }
 
   componentWillUpdate() {
@@ -26,7 +31,12 @@ class Progress extends Component {
   render() {
     const { txProgressData, txProgress } = this.props;
 
-    if (!txProgressData) return <h1>Loading</h1>;
+    // Failed Handling
+    // txProgress defaults to 1
+    // Only changed to 0 if tx failed
+    const failed = txProgress === 0 ? true : false;
+
+    if (!txProgressData) return <Loader />;
 
     let classes = [
       [
@@ -46,15 +56,22 @@ class Progress extends Component {
 
     return (
       <div className="progress">
-        <div className={classes[0].join(" ")}>
-          <span>Awaiting Deposit</span>
-        </div>
-        <div className={classes[1].join(" ")}>
-          <span>Received Deposit</span>
-        </div>
-        <div className={classes[2].join(" ")}>
-          <span>Complete!</span>
-        </div>
+        {!failed && (
+          <React.Fragment>
+            <div className={classes[0].join(" ")}>
+              <span>Awaiting Deposit</span>
+            </div>
+            <div className={classes[1].join(" ")}>
+              <span>Received Deposit</span>
+            </div>
+            <div className={classes[2].join(" ")}>
+              <span>Complete!</span>
+            </div>
+          </React.Fragment>
+        )}
+        {failed && (
+          <div className="step failed">The transaction has failed</div>
+        )}
       </div>
     );
   }

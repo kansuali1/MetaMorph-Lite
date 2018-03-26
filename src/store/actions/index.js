@@ -117,6 +117,18 @@ export default {
       });
     };
   },
+  orderInfo: orderId => {
+    return dispatch => {
+      dispatch({ type: constants.LOADING, data: true });
+      SS.OrderInfo(orderId, response => {
+        dispatch({
+          type: constants.GET_ORDER_INFO,
+          data: response
+        });
+        dispatch({ type: constants.LOADING, data: false });
+      });
+    };
+  },
   error: error => {
     return dispatch => {
       dispatch({ type: constants.RESET_ERROR });

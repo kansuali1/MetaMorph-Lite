@@ -31,6 +31,51 @@
     }
   }
 }
+
+.stage3 .orderCopy {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 30px;
+  padding: 0;
+  margin: 10px 0 25px 0;
+  height: 100%;
+
+  input {
+    padding: 10px;
+    border: 1px solid #252525;
+    margin-left: 10px;
+  }
+  small {
+    color: #fff;
+    background: #252525;
+    border-radius: 5px;
+    opacity: 0;
+    margin-left: 15px;
+    animation: fadeInOut 4s ease;
+    position: absolute;
+    right: -23px;
+    bottom: -40px;
+    padding: 6px;
+  }
+  svg {
+    position: relative;
+    margin-left: 10px;
+    padding: 7.5px;
+    border-radius: 5px;
+    height: 38px;
+    width: 38px;
+    transition: background 0.3s ease;
+    vertical-align: bottom;
+    background: #ccc;
+
+    &:hover {
+      background: green;
+    }
+  }
+}
 @keyframes fadeInOut {
   from {
     opacity: 0;
@@ -46,5 +91,8 @@
 @media screen and (max-width: 767px) {
   .progress {
     align-items: unset;
+  }
+  .stage3 .orderCopy input {
+    margin: 0;
   }
 }

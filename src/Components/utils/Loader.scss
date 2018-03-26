@@ -17,6 +17,12 @@
   animation: anirotate 10s linear infinite;
   text-align: center;
 }
+.loader-text {
+  text-align: center;
+  color: #ffd600;
+  font-size: 13px;
+  margin-top: 5px;
+}
 .dot-container {
   position: absolute;
   border: 0px solid #fff;

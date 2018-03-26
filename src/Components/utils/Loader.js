@@ -11,24 +11,27 @@ export default class extends Component {
     return (
       <React.Fragment>
         {yellow && (
-          <div id="loader">
-            <div className="loader">
-              <div className="dot-container">
-                <div className="dot" />
-                <div className="dot" />
-                <div className="dot" />
-              </div>
-              <div className="dot-container">
-                <div className="dot" />
-                <div className="dot" />
-                <div className="dot" />
-              </div>
-              <div className="dot-container">
-                <div className="dot" />
-                <div className="dot" />
-                <div className="dot" />
+          <div id="loader-fix">
+            <div id="loader">
+              <div className="loader">
+                <div className="dot-container">
+                  <div className="dot" />
+                  <div className="dot" />
+                  <div className="dot" />
+                </div>
+                <div className="dot-container">
+                  <div className="dot" />
+                  <div className="dot" />
+                  <div className="dot" />
+                </div>
+                <div className="dot-container">
+                  <div className="dot" />
+                  <div className="dot" />
+                  <div className="dot" />
+                </div>
               </div>
             </div>
+            <div className="loader-text">Loading...</div>
           </div>
         )}
         {!yellow && (
