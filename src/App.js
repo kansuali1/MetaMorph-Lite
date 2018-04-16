@@ -43,7 +43,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <img width="150" src={logo} alt="YLX.exchange" />
+        <img width="250" style={{margin: '0 auto'}} src={logo} alt="MetaMorph" />
         <Switch>
           <Route exact path="/" component={Stage1} />
           <Route path="/stage2" component={Stage2} />
@@ -52,8 +52,8 @@ class App extends Component {
         <div id="powered-by">
           <div className="pp-by-ss">
             <a href="https://shapeshift.io/">
-              <img width="150" src={sslogo} alt="Shape shift" />
-              <span>Powered by ShapeShift.io</span>
+              <img width="85" src={sslogo} alt="Shape shift" />
+              <span style={{fontSize: 9}}>Powered by ShapeShift.io</span>
             </a>
             <br />
           </div>

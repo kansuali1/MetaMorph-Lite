@@ -7,10 +7,10 @@
     align-items: center;
     position: relative;
     padding: 20px 0 20px 0;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     opacity: 1;
     color: maroon;
-    background: #ccc;
+    background: rgba(123, 90, 255, 0.5);
     flex-basis: 33%;
 
     span {
@@ -18,16 +18,16 @@
     }
 
     &.active {
-      background: #ddd;
+      background: rgba(123, 90, 255, 1);
       span {
         opacity: 1;
-        color: green;
+        color: white;
         animation: fadeInOut 2s ease infinite;
       }
     }
     &.complete {
-      background: green;
-      color: #fff;
+      background: rgba(123, 90, 255, 1);
+      color: green;
     }
   }
 }
@@ -45,7 +45,7 @@
 
   input {
     padding: 10px;
-    border: 1px solid #252525;
+    
     margin-left: 10px;
   }
   small {
@@ -69,10 +69,11 @@
     width: 38px;
     transition: background 0.3s ease;
     vertical-align: bottom;
-    background: #ccc;
+    background: transparent;
 
     &:hover {
-      background: green;
+      background: rgba(123, 90, 255, .8);
+      cursor: pointer;
     }
   }
 }

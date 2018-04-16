@@ -1,18 +1,25 @@
+@mixin input-placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; } 
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-html,
-body {
-  background: #ddd;
 }
 
 body {
   font-family: sans-serif;
   font-family: "Biryani", sans-serif;
   height: 100vh;
-  background: #000;
+  background: #110a44;
+  color: white;
+  background-image: url('./images/stars.jpg');
+  background-size: cover;
   display: flex;
   justify-content: center;
 }
@@ -33,4 +40,17 @@ canvas {
 
   width: inherit;
   height: auto;
+}
+
+input {
+  background: none;
+  color: white;
+
+  @include input-placeholder(){
+    color: rgba(255,255,255,0.8);
+  } 
+}
+
+span {
+  color: white;
 }

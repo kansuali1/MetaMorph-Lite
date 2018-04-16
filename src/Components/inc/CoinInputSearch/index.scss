@@ -15,7 +15,7 @@
 
     &:focus {
       outline: none;
-      border-bottom: 1px solid #ff9900;
+      border-bottom: 1px solid white;
     }
   }
   .coins-list {
@@ -30,10 +30,10 @@
       display: flex;
       align-items: center;
       padding: 10px;
-      border-bottom: 1px solid;
+     
       transition: 0.3s ease;
 
-      background: #fff;
+      background: rgba(0, 0, 0, 0.7);
       img {
         max-width: 100%;
         padding: 5px;
@@ -41,14 +41,14 @@
       }
 
       &:hover {
-        background: #ff9900;
-        color: #000;
+        background: rgba(123, 90, 255, 0.8);
+        color: #fff;
         cursor: pointer;
       }
       &.disabled-coin {
         text-decoration: line-through;
         pointer-events: none;
-        background: #ccc;
+        background: black;
       }
     }
   }

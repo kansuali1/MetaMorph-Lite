@@ -41,14 +41,21 @@
 
     input {
       padding: 10px;
-      border: 1px solid #252525;
+      border: 1px solid white;
+
 
       &.valid {
         border: 1px solid green;
         background: #fff;
       }
+
+      &:focus {
+        border: 1px solid #7b5aff;
+        outline: none;
+      }
       &:placeholder {
         padding-left: 5px;
+        color: white !important;
       }
     }
 

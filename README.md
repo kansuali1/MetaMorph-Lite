@@ -1,6 +1,6 @@
-# YoloShift
+# MetaMorph Lite
 
-#### [Live App](http://yolo.exchange/yolo-shift)
+#### [Live App](https://lite.metamorph.pro)
 
 #### Powered by [ShapeShift](https://info.shapeshift.io/tools/skeleton)
 

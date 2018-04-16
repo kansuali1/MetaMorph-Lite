@@ -47,6 +47,7 @@ class CoinInput extends Component {
           type="text"
           value={isSearching ? search : data.name}
           onChange={this.handleChange}
+          onClick={() => this.setState({isSearching:true})}
           ref="searchBar"
         />
         {isSearching && (

@@ -12,8 +12,8 @@ import config from "./lib/particlesjs-config.json";
 ReactDOM.render(
   <Provider store={store.configureStore()}>
     <React.Fragment>
-      <Particles params={config} style={{ height: "100%" }} />
-      <Router basename="/yolo-shift">
+      
+      <Router>
         <App />
       </Router>
     </React.Fragment>
@@ -21,3 +21,4 @@ ReactDOM.render(
   document.getElementById("root")
 );
 // registerServiceWorker();
+{/* <Particles params={config} style={{ height: "100%" }} /> */}
